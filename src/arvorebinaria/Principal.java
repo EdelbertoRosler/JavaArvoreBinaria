@@ -27,6 +27,9 @@ public class Principal {
         arv.imprimePreOrdem();
         arv.imprimePosOrdem();
         arv.imprimeFormatoArvore();
+        arv.limpa();
+        System.out.println(arv.tamanho());
+        System.out.println(arv.pesquisa(81));
     }
 
 }

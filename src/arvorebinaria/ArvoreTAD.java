@@ -128,6 +128,13 @@ public class ArvoreTAD {
         System.out.println(n.elem);
     }//imprime em formato pós-ordem (esq-dir-raiz)
 
+    public void limpa(){
+//        raiz.esq = null;
+//        raiz.dir = null;
+        this.raiz = null;
+        this.num = 0;
+    }//limpa a árvore
+
     /***************************************************************************
      * Funções já implementadas: Remove e Imprime em formato de árvore
      **************************************************************************/
