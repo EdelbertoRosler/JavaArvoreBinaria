@@ -104,7 +104,7 @@ public class ArvoreTAD {
         this.imprimeEmOrdemRec(n.dir);
     }//imprime em ordem crescente, em linhas separadas
 
-    public  void imprimepreOrdem(){ this.imprimePreOrdemRec(this.raiz);}
+    public  void imprimePreOrdem(){ this.imprimePreOrdemRec(this.raiz);}
 
     private void imprimePreOrdemRec(Nodo n) {
         if(n == null){
