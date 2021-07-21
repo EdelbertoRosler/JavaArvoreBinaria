@@ -25,6 +25,7 @@ public class Principal {
         System.out.println(arv.acessaMaior());
         arv.imprimeEmOrdem();
         arv.imprimePreOrdem();
+        arv.imprimePosOrdem();
         arv.imprimeFormatoArvore();
     }
 
