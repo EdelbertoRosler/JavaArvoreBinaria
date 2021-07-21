@@ -19,25 +19,25 @@ public class ArvoreTAD {
 
     public int acessaMenor(){//chama o método recursivo
         return this.acessaMenorRec(this.raiz);
-    }//encontra o menor valor
+    }
 
     private int acessaMenorRec(Nodo n) {
         if(n == null || n.esq == null){
             return n.elem;//ponto de parada
         }
         return this.acessaMenorRec(n.esq);//vai indo para a esquerda recursivamente
-    }
+    }//encontra o menor valor
 
     public int acessaMaior(){//chama o método recursivo
         return this.acessaMaiorRec(this.raiz);
-    }//encontra o maior valor
+    }
 
     private int acessaMaiorRec(Nodo n) {
         if(n == null || n.dir == null){
             return n.elem;//ponto de parada
         }
         return this.acessaMaiorRec(n.dir);//vai indo para a direita recursivamente
-    }
+    }//encontra o maior valor
 
     public void insere(int elem) {
         if (raiz == null){
@@ -48,7 +48,7 @@ public class ArvoreTAD {
         }
         this.num += 1;
 
-    }//insere um elemento
+    }
 
     private void insereRec(int elem, Nodo n) {
         if (elem == n.elem){
@@ -70,11 +70,11 @@ public class ArvoreTAD {
                 this.insereRec(elem, n.dir);
             }
         }
-    }
+    }//insere um elemento
 
     public boolean pesquisa(int elem) {
         return  this.pesquisaRec(elem, raiz);
-    }//pesquisa por um elemento
+    }
 
     private boolean pesquisaRec(int elem, Nodo n) {
         if(n == null){
@@ -89,11 +89,11 @@ public class ArvoreTAD {
         else {
             return  pesquisaRec(elem, n.dir);
         }
-    }
+    }//pesquisa por um elemento
 
     public void imprimeEmOrdem() {
         this.imprimeEmOrdemRec(this.raiz);
-    }//imprime em ordem crescente, em linhas separadas
+    }
 
     private void imprimeEmOrdemRec(Nodo n) {
         if(n == null){
@@ -102,23 +102,31 @@ public class ArvoreTAD {
         this.imprimeEmOrdemRec(n.esq);
         System.out.println(n.elem);
         this.imprimeEmOrdemRec(n.dir);
-    }
+    }//imprime em ordem crescente, em linhas separadas
 
-    public void imprimePreOrdem() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public  void imprimepreOrdem(){ this.imprimePreOrdemRec(this.raiz);}
 
     private void imprimePreOrdemRec(Nodo n) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+        if(n == null){
+            return;
+        }
+        System.out.println(n.elem);
+        this.imprimeEmOrdemRec(n.esq);
+        this.imprimeEmOrdemRec(n.dir);
+    }//imprime em formato pré-ordem (raiz-esq-dir)
 
     public void imprimePosOrdem() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.imprimePosOrdemRec(this.raiz);
     }
 
     private void imprimePosOrdemRec(Nodo n) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+        if(n == null){
+            return;
+        }
+        this.imprimeEmOrdemRec(n.esq);
+        this.imprimeEmOrdemRec(n.dir);
+        System.out.println(n.elem);
+    }//imprime em formato pós-ordem (esq-dir-raiz)
 
     /***************************************************************************
      * Funções já implementadas: Remove e Imprime em formato de árvore

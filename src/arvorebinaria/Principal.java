@@ -9,13 +9,13 @@ public class Principal {
         ArvoreTAD arv = new ArvoreTAD();
 
         arv.insere(10);
-        arv.insere(15);
-        arv.insere(8);
         arv.insere(55);
-        arv.insere(99);
+        arv.insere(8);
+        arv.insere(15);
         arv.insere(81);
+        arv.insere(99);
         arv.insere(88);
-        arv.imprimeEmOrdem();
+//        arv.imprimeEmOrdem();
 //        arv.imprimeFormatoArvore();
         arv.remove(88);
         System.out.println(arv.pesquisa(81));
@@ -23,8 +23,9 @@ public class Principal {
         System.out.println(arv.ehVazia());
         System.out.println(arv.acessaMenor());
         System.out.println(arv.acessaMaior());
-
-
+//        arv.imprimeEmOrdem();
+//        arv.imprimepreOrdem();
+        arv.imprimeFormatoArvore();
     }
 
 }
